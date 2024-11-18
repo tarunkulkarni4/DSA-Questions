@@ -56,9 +56,9 @@ solution:
         int length=0;
         for(int i=s.length()-1;i>=0;i--)
         {
-            if(s.charAt(i)==' ')
+            if(s.charAt(i)!=' ')
             {
-              i--;
+              length++;
             }
             // if length found of last word return lenght
             else if(length>0)
