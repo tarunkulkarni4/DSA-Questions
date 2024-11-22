@@ -1,84 +1,56 @@
-{
-  /*
-  This can be done by two approches(Time and space complexiet is same O(n) )
-  
-   1.recursive 
-      
-   class Solution {
-    //Function to find the height of a binary tree.
-    int height(Node node) 
-    {
-        // code here 
-        if(node==null)
-        {
-            return 0;
+{/*
+    
+    1.using recursion
+
+      public class Solution {
+    public int maxDepth(TreeNode A) {
+        if (A == null) {
+            return 0; // Base case: empty tree has depth 0
         }
-        int left=height(node.left);
-        int right=height(node.right);
-        
-        return Math.max(left,right)+1;
+
+        // Recursively calculate the depths of left and right subtrees
+        int leftDepth = maxDepth(A.left);
+        int rightDepth = maxDepth(A.right);
+
+        // Return the greater depth + 1 for the current level
+        return 1 + Math.max(leftDepth, rightDepth);
     }
-}
- 
+} 
+      
+             OR
 
-    2.Using level ordering using Queue
+    2.Using level order techinque
 
-      class Solution {
+    class Solution {
     public int maxDepth(TreeNode root) {
-        // If the tree is empty, its depth is 0
         if (root == null) {
             return 0;
         }
 
-        // Initialize a queue to store nodes for level-order traversal
         Queue<TreeNode> queue = new LinkedList<>();
-        // Add the root node to start processing
-        queue.add(root);
-        // Variable to keep track of the number of levels (tree depth)
-        int levels = 0;
+        queue.add(root); // Start with the root node
+        int level = 0;   // Initialize depth level to 0
 
-        // Loop until the queue is empty (all nodes have been processed)
         while (!queue.isEmpty()) {
-            // Count the number of nodes at the current level
-            int countNode = queue.size();
+            int count = queue.size(); // Get the number of nodes at the current level
+            for (int i = 0; i < count; i++) {
+                TreeNode node = queue.poll(); // Retrieve and remove the front node
 
-            // This condition is redundant since the while loop ensures the queue isn't empty.
-            // It can be safely removed without affecting the logic.
-            if (countNode == 0) {
-                return levels;
-            }
-
-            // Process all nodes at the current level
-            while (countNode > 0) {
-                // Remove a node from the queue for processing
-                TreeNode element = queue.poll();
-
-                // If the current node has a left child, add it to the queue for the next level
-                if (element.left != null) {
-                    queue.add(element.left);
+                // Add left and right children (if they exist) to the queue
+                if (node.left != null) {
+                    queue.add(node.left);
                 }
-
-                // If the current node has a right child, add it to the queue for the next level
-                if (element.right != null) {
-                    queue.add(element.right);
+                if (node.right != null) {
+                    queue.add(node.right);
                 }
-
-                // Decrement the count of nodes left to process at this level
-                countNode--;
             }
-
-            // Increment the depth (level count) after processing all nodes at the current level
-            levels++;
+            level++; // Increment the level after processing all nodes at the current level
         }
 
-        // Return the total number of levels
-        return levels++;
+        return level; // Return the maximum depth
     }
 }
- 
 
-    
-    
-    
-*/
-}
+
+
+    */}
