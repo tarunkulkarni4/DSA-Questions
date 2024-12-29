@@ -92,6 +92,7 @@ class Solution {
                 return 0;
             }
         }
+            
         return stack.isEmpty() ?1:0;
 
 
