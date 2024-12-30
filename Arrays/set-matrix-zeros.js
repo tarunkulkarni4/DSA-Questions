@@ -94,7 +94,59 @@ class Solution {
     }
 }
 
-    
+                            OR
+                            
+ import java.util.ArrayList;
+
+public class Solution {
+    public void setZeroes(ArrayList<ArrayList<Integer>> a) {
+        boolean firstRowZero = false;
+        boolean firstColZero = false;
+        int rows = a.size();
+        int cols = a.get(0).size();
+
+        // Step 1: Identify rows and columns to be zeroed
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                if (a.get(i).get(j) == 0) {
+                    if (i == 0) {
+                        firstRowZero = true; // Mark that the first row contains a zero
+                    }
+                    if (j == 0) {
+                        firstColZero = true; // Mark that the first column contains a zero
+                    }
+                    // Mark the first element of the row and column
+                    a.get(i).set(0, 0);
+                    a.get(0).set(j, 0);
+                }
+            }
+        }
+
+        // Step 2: Use markers to set elements to zero
+        for (int i = 1; i < rows; i++) {
+            for (int j = 1; j < cols; j++) {
+                if (a.get(i).get(0) == 0 || a.get(0).get(j) == 0) {
+                    a.get(i).set(j, 0);
+                }
+            }
+        }
+
+        // Step 3: Handle the first row
+        if (firstRowZero) {
+            for (int j = 0; j < cols; j++) {
+                a.get(0).set(j, 0);
+            }
+        }
+
+        // Step 4: Handle the first column
+        if (firstColZero) {
+            for (int i = 0; i < rows; i++) {
+                a.get(i).set(0, 0);
+            }
+        }
+    }
+}
+
     
 */
 }
