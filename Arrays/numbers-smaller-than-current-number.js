@@ -93,7 +93,44 @@ Explanation:
 
 
 optimized:
+tc,sc is O(n),O(1)
 
+class Solution {
+    public int[] smallerNumbersThanCurrent(int[] nums) {
+        // Step 1: Create a frequency array to store the count of each number in the range [0, 100]
+        // Using size 102 to handle cumulative sum calculation without index out-of-bounds issues.
+        int[] freq = new int[102];
+
+        // Step 2: Populate the frequency array
+        // freq[i] will store the count of how many times number 'i' appears in the input array.
+        for (int i = 0; i < nums.length; i++) {
+            freq[nums[i]]++; // Increment the count for the number nums[i]
+        }
+
+        // Step 3: Compute cumulative frequency
+        // freq[i] will now represent the count of numbers <= i
+        for (int i = 1; i < freq.length; i++) { // Start from 1 to avoid accessing freq[-1]
+            freq[i] += freq[i - 1]; // Add the count of numbers <= i-1 to freq[i]
+        }
+
+        // Step 4: Prepare the result array
+        // For each number in the input array, find how many numbers are smaller than it.
+        int[] result = new int[nums.length];
+
+        for (int i = 0; i < result.length; i++) {
+            // If the number is 0, there are no smaller numbers
+            if (nums[i] == 0) {
+                result[i] = 0;
+            } else {
+                // Use the cumulative frequency to determine how many numbers are smaller than nums[i]
+                result[i] = freq[nums[i] - 1];
+            }
+        }
+
+        // Step 5: Return the result array
+        return result;
+    }
+}
 
 
 
