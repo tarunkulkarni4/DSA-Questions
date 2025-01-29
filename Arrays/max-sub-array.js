@@ -37,6 +37,42 @@ Follow up: If you have figured out the O(n) solution, try coding another solutio
 
 solution:
 
+
+
+  class Solution {
+    public int maxSubArray(int[] nums) {
+        // Initialize the maximum subarray sum to the smallest possible integer value
+        int maxi = Integer.MIN_VALUE;
+        
+        // Variable to store the current subarray sum
+        int sum = 0;
+
+        // Traverse through the array
+        for (int i = 0; i < nums.length; i++) {
+            // Add the current element to the running sum
+            sum += nums[i];
+
+            // Update the maximum subarray sum if the current sum is greater than the previous maximum
+            if (sum > maxi) {
+                maxi = sum;
+            }
+
+            // If the current sum becomes negative, reset it to 0
+            // (discard the current subarray and start a new one)
+            if (sum < 0) {
+                sum = 0;
+            }
+        }
+
+        // Return the maximum subarray sum
+        return maxi;
+    }
+}
+   
+
+
+                  OR
+
 class Solution {
     public int maxSubArray(int[] nums) {
         // Initialize variables
