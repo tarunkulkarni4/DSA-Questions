@@ -64,7 +64,8 @@ Solution:
                   map.put(original,replacement); //return false;
             }
             else{
-              return false;
+              return 
+            ;
             }
         }
         else{ //This part executes when the original key already exists in the map.
