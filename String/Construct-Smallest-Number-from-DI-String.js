@@ -25,6 +25,7 @@ It can be proven that "123549876" is the smallest possible num that meets the co
 Note that "123414321" is not possible because the digit '1' is used more than once.
 Example 2:
 
+
 Input: pattern = "DDD"
 Output: "4321"
 Explanation:

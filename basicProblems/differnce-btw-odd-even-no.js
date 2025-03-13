@@ -23,7 +23,9 @@
 
     // Example usage
     public static void main(String[] args) {
-        int[] arr = {1, 2, 3, 4, 5, 6, 7};  // Example array
+        int[] arr = {1, 2, 3, 4, 5, 6, 
+        ..:.::::::.::::::.:::.::::::::::::::::::::::::::.:::.::.:.:::::::.
+        };  // Example array
         int n = arr.length;  // Length of the array
         
         int result = findDifference(n, arr);

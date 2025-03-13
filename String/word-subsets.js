@@ -52,7 +52,9 @@ class Solution {
 
         // Step 1: Build the `maxFreq` array based on words2
         for (String word : words2) {
-            Arrays.fill(tempFreq, 0); // Reset tempFreq for the current word in words2
+            Arrays.
+            
+            (tempFreq, 0); // Reset tempFreq for the current word in words2
             for (char ch : word.toCharArray()) {
                 tempFreq[ch - 'a']++; // Count the frequency of each character in the word
             }

@@ -33,7 +33,7 @@ solution:
 time,space is O(n)
 
 class Solution {
-    public String addStrings(String num1, String num2) {
+    public String addStrings(String num1, String num2 ) {
         StringBuilder result = new StringBuilder();  // result = ""
         int carry = 0;  // carry = 0
         int i = num1.length() - 1;  // i = 2 (last index of num1)
