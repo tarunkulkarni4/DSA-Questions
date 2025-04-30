@@ -38,7 +38,7 @@ class Solution {
         Stack<Integer> stack = new Stack<>();
         ListNode temp = head;
         
-        // Push all elements into stack
+        // Push all elements into stack 
         while (temp != null) {
             stack.push(temp.val);
             temp = temp.next;
