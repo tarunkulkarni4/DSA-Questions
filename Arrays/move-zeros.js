@@ -35,7 +35,7 @@ Constraints:
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] != 0) {
                 nums[lastIndex++] = nums[i];
-            }
+            } 
         }
 
         // Fill the remaining positions with zeros

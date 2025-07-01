@@ -43,7 +43,7 @@ tc ,sc is o(n),o(n)
     class Solution {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode result = new ListNode(0); // Dummy node to simplify the result
-        ListNode ptr = result; // Pointer to build the result list
+        ListNode ptr = re8sult; // Pointer to build the result list
         int carry = 0; // To handle carry during addition
         
         // Traverse both lists until both are null and no carry is left

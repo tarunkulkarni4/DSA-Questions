@@ -109,7 +109,7 @@ class Solution {
     // Step 1: Start fast and slow pointers
     int slow = 0, fast = 0;
 
-    // Step 2: Move slow pointer 1 step and fast pointer 2 steps until they meet
+    // Step 2: Move slow pointer 1 step and fast   2 steps until they meet
     do {
         slow = nums[slow];         // Slow moves one step
         fast = nums[nums[fast]];   // Fast moves two steps

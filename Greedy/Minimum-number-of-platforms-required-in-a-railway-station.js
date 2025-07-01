@@ -10,7 +10,7 @@ arr[i] >= arr[j] && arr[i] <= dep[j]
 arr[j] >= arr[i] && arr[j] <= dep[i]
 → Another train arrives during the stay of the current train (i.e., it arrives after this train and before it departs).
 
-arr[i] <= arr[j] && dep[i] >= dep[j]
+arr[i] <=  arr[j] && dep[i] >= dep[j]
 → Another train's entire schedule fits within the current train's time — it comes later and leaves earlier.
 
 arr[j] <= arr[i] && dep[j] >= dep[i]
